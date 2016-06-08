@@ -1,0 +1,19 @@
+{
+    "name": "clooder/json-ld-bundle",
+    "description": "a bundle for generate json ld",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flug",
+            "email": "flugv1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}, 
+    "autoload": {
+        "psr-4" : {
+            "Clooder\\Bundle\\JsonLDBundle": ""
+        }
+    }
+}

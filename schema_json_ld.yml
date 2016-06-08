@@ -1,0 +1,12 @@
+routes:
+    clooder_frontend_homepage:
+        use_entity: false
+        json:
+            - @context: 'http://schema.org'
+            - @type: 'WebSite'
+            - name: 'clooder'
+            - url: 'https://www.clooder.fr'
+            - potentialAction:
+                - @type: 'SearchAction'
+                - target: 'https://www.clooder.fr/search#/q?search={search_term_string}'
+                - query-input: "required name=search_term_string"

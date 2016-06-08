@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="piktalent_json_ld.extension" class="Piktalent\Bundle\JsonLDBundle\Twig\JsonLdExtension">
+            <argument type="service" id="piktalent_json_ld.kernel"/>
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="piktalent_json_ld.kernel" class="Piktalent\Bundle\JsonLDBundle\Listener\KernelListener">
+            <argument type="service" id="json_ld.aggregate"/>
+            <tag name="kernel.event_listener" event="kernel.request"
+                 method="onKernelRequest"/>
+            <tag name="kernel.event_listener" event="kernel.controller"
+                 method="onKernelController"/>
+        </service>
+    </services>
+</container>
